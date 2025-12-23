@@ -34,7 +34,7 @@ body {
 
 .header-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 20px;
     align-items: start;
 }
@@ -94,6 +94,17 @@ body {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+.contact-link {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
 
 /* Section Styles */
