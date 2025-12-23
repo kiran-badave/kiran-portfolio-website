@@ -37,6 +37,10 @@
                         <a href="https://kiran-badave.github.io/" id="portfolio" class="contact-link" target="_blank">kiran-badave.github.io</a>
                     </div>
                     <div class="contact-item">
+                        <span class="label">GitHub:</span>
+                        <a href="https://github.com/kiran-badave" id="github" class="contact-link" target="_blank">github.com/kiran-badave</a>
+                    </div>
+                    <div class="contact-item">
                         <span class="label">LinkedIn:</span>
                         <a href="https://www.linkedin.com/in/kiran-badave" id="linkedin" class="contact-link" target="_blank">linkedin.com/in/kiran-badave</a>
                     </div>
@@ -91,6 +95,7 @@
             document.getElementById('email').textContent = portfolioData.personal.email;
             document.getElementById('phone').textContent = portfolioData.personal.phone.join(', ');
             document.getElementById('portfolio').textContent = portfolioData.personal.portfolioDisplay;
+            document.getElementById('github').textContent = portfolioData.personal.githubDisplay;
             document.getElementById('linkedin').textContent = portfolioData.personal.linkedinDisplay;
             document.getElementById('profilePhoto').src = portfolioData.personal.profileImage;
 

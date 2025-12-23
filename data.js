@@ -11,6 +11,8 @@ const portfolioData = {
         phone: ["+91 967 303 6719", "+91 797 208 1821"],
         linkedin: "https://www.linkedin.com/in/kiran-badave",
         linkedinDisplay: "linkedin.com/in/kiran-badave",
+        github: "https://github.com/kiran-badave",
+        githubDisplay: "github.com/kiran-badave",
         portfolio: "https://kiran-badave.github.io/",
         portfolioDisplay: "kiran-badave.github.io",
         address: "604, D2, Kumar Pebble Park, Hadapsar, Pune, MH - 411028",
