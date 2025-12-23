@@ -139,52 +139,81 @@ statNumbers.forEach(stat => counterObserver.observe(stat));
 // ===================================
 
 // Hero Section Animations
+// Profile Image Animation - Wait for image to load
+window.addEventListener('load', () => {
+    gsap.from('.profile-image-wrapper', {
+        opacity: 0,
+        scale: 0.5,
+        duration: 1,
+        delay: 0.2,
+        ease: 'back.out(1.7)'
+    });
+
+    gsap.from('.profile-image', {
+        opacity: 1,
+        scale: 0.8,
+        duration: 1,
+        delay: 0.4,
+        ease: 'elastic.out(1, 0.5)'
+    });
+
+    // Continuous floating animation for profile image
+    gsap.to('.profile-image-wrapper', {
+        y: -20,
+        duration: 3,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1.5
+    });
+});
+
 gsap.from('.hero-greeting', {
     opacity: 0,
     y: 30,
     duration: 0.8,
-    delay: 0.2
+    delay: 0.3
 });
 
 gsap.from('.hero-name', {
     opacity: 0,
     y: 30,
     duration: 0.8,
-    delay: 0.4
+    delay: 0.5
 });
 
 gsap.from('.hero-subtitle', {
     opacity: 0,
     y: 30,
     duration: 0.8,
-    delay: 0.6
+    delay: 0.7
 });
 
 gsap.from('.hero-description', {
     opacity: 0,
     y: 30,
     duration: 0.8,
-    delay: 0.8
+    delay: 0.9
 });
 
 gsap.from('.hero-cta', {
     opacity: 0,
     y: 30,
     duration: 0.8,
-    delay: 1.0
+    delay: 1.1
 });
 
 gsap.from('.hero-stats', {
     opacity: 0,
     y: 30,
     duration: 0.8,
-    delay: 1.2
+    delay: 1.3
 });
 
 gsap.from('.scroll-indicator', {
     opacity: 0,
     duration: 1,
-    delay: 1.5
+    delay: 1.6
 });
 
 // Gradient Orbs Animation
@@ -450,6 +479,41 @@ buttons.forEach(button => {
 });
 
 // ===================================
+// Profile Image Tilt Effect
+// ===================================
+const profileImage = document.querySelector('.profile-image-wrapper');
+if (profileImage) {
+    profileImage.addEventListener('mousemove', (e) => {
+        const rect = profileImage.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 15;
+        const rotateY = (centerX - x) / 15;
+        
+        gsap.to(profileImage, {
+            rotationX: rotateX,
+            rotationY: rotateY,
+            duration: 0.5,
+            ease: 'power2.out',
+            transformPerspective: 1000
+        });
+    });
+    
+    profileImage.addEventListener('mouseleave', () => {
+        gsap.to(profileImage, {
+            rotationX: 0,
+            rotationY: 0,
+            duration: 0.5,
+            ease: 'power2.out'
+        });
+    });
+}
+
+// ===================================
 // Skill Category Tilt Effect
 // ===================================
 const skillCategories = document.querySelectorAll('.skill-category');
@@ -514,15 +578,7 @@ gsap.from('.hero-name .char', {
 // ===================================
 // Loading Animation
 // ===================================
-window.addEventListener('load', () => {
-    gsap.to('body', {
-        opacity: 1,
-        duration: 0.5
-    });
-});
-
-// Set initial body opacity
-document.body.style.opacity = '0';
+// Removed body opacity animation to prevent profile picture from disappearing
 
 // ===================================
 // Scroll Progress Indicator

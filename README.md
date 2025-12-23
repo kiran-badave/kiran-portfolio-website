@@ -26,6 +26,15 @@ kiran-portfolio-website/
 ├── styles.css          # CSS styles and animations
 ├── script.js           # JavaScript and GSAP animations
 ├── README.md           # Project documentation
+├── DEPLOYMENT.md       # Deployment guide
+├── ASSETS_GUIDE.md     # Assets organization guide
+├── .gitignore          # Git ignore file
+├── assets/             # Static assets folder
+│   ├── profile_picture.png  # Your profile picture
+│   ├── images/         # Other images (projects, etc.)
+│   ├── icons/          # Icons and favicons
+│   ├── documents/      # PDFs, resume, etc.
+│   └── fonts/          # Custom fonts (if any)
 └── Kiran_Badave_CV_JUN_2025.html  # Original CV file
 ```
 
