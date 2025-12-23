@@ -15,7 +15,7 @@ This guide will help you deploy your portfolio website to GitHub Pages in minute
 1. Go to [GitHub](https://github.com)
 2. Click the "+" icon in the top right corner
 3. Select "New repository"
-4. Name it: `kiran-portfolio-website` (or any name you prefer)
+4. Name it: `kiran-badave.github.io`
 5. Keep it **Public**
 6. **DO NOT** initialize with README (we already have one)
 7. Click "Create repository"
@@ -35,7 +35,7 @@ git add .
 git commit -m "Initial commit: Modern portfolio website with GSAP animations"
 
 # Add your GitHub repository as remote
-git remote add origin https://github.com/kiranbadave/kiran-portfolio-website.git
+git remote add origin https://github.com/kiran-badave/kiran-badave.github.io.git
 
 # Push to GitHub
 git branch -M main
@@ -54,7 +54,7 @@ git push -u origin main
    - Select folder: **/ (root)**
 5. Click **"Save"**
 6. Wait 1-2 minutes for deployment
-7. Your site will be live at: `https://kiranbadave.github.io/kiran-portfolio-website`
+7. Your site will be live at: `https://kiran-badave.github.io/`
 
 #### Option B: Via GitHub CLI (If installed)
 
@@ -66,7 +66,7 @@ gh repo edit --enable-pages --pages-branch main
 ### 4. Verify Deployment
 
 1. Wait 1-2 minutes for GitHub to build and deploy
-2. Visit: `https://kiranbadave.github.io/kiran-portfolio-website`
+2. Visit: `https://kiran-badave.github.io/`
 3. Your portfolio should be live! 🎉
 
 ## Custom Domain (Optional)
@@ -81,7 +81,7 @@ If you want to use a custom domain like `kiranbadave.com`:
    ```
    Type: CNAME
    Name: www
-   Value: kiranbadave.github.io
+   Value: kiran-badave.github.io
    
    Type: A
    Name: @
@@ -192,7 +192,7 @@ If you encounter issues:
 
 ```bash
 # Clone repository
-git clone https://github.com/kiranbadave/kiran-portfolio-website.git
+git clone https://github.com/kiran-badave/kiran-badave.github.io.git
 
 # Check status
 git status

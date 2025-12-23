@@ -19,7 +19,7 @@ A modern, animated portfolio website showcasing my professional experience, skil
 
 ## 🚀 Live Demo
 
-Visit the live website: [https://kiranbadave.github.io/kiran-portfolio-website](https://kiranbadave.github.io/kiran-portfolio-website)
+Visit the live website: [https://kiran-badave.github.io/](https://kiran-badave.github.io/)
 
 ## 📁 Project Structure
 
@@ -57,8 +57,8 @@ kiran-portfolio-website/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/kiranbadave/kiran-portfolio-website.git
-   cd kiran-portfolio-website
+   git clone https://github.com/kiran-badave/kiran-badave.github.io.git
+   cd kiran-badave.github.io
    ```
 
 2. **Open in browser**
@@ -119,7 +119,7 @@ git add .
 git commit -m "Initial commit: Portfolio website"
 
 # Add remote repository
-git remote add origin https://github.com/kiranbadave/kiran-portfolio-website.git
+git remote add origin https://github.com/kiran-badave/kiran-badave.github.io.git
 
 # Push to GitHub
 git branch -M main

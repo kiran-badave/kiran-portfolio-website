@@ -33,6 +33,10 @@
                         <span id="phone">(+91) 967 303 6719</span>
                     </div>
                     <div class="contact-item">
+                        <span class="label">Portfolio:</span>
+                        <span id="portfolio">kiran-badave.github.io</span>
+                    </div>
+                    <div class="contact-item">
                         <span class="label">LinkedIn:</span>
                         <span id="linkedin">linkedin.com/in/kiran-badave</span>
                     </div>
@@ -86,6 +90,7 @@
             document.getElementById('location').textContent = portfolioData.personal.location;
             document.getElementById('email').textContent = portfolioData.personal.email;
             document.getElementById('phone').textContent = portfolioData.personal.phone.join(', ');
+            document.getElementById('portfolio').textContent = portfolioData.personal.portfolioDisplay;
             document.getElementById('linkedin').textContent = portfolioData.personal.linkedinDisplay;
             document.getElementById('profilePhoto').src = portfolioData.personal.profileImage;
 
