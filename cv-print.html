@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiran Badave - CV (Printable)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cv-print.css">
+    <script src="data.js"></script>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header Section -->
+        <header class="cv-header">
+            <div class="header-content">
+                <div class="profile-section">
+                    <img src="assets/profile_picture.png" alt="Kiran Badave" class="profile-photo" id="profilePhoto">
+                    <div class="header-text">
+                        <h1 class="name" id="name">Kiran Badave</h1>
+                        <h2 class="title" id="title">Staff Software Engineer</h2>
+                        <p class="location" id="location">Pune, Maharashtra, India</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="label">Email:</span>
+                        <span id="email">kiranbadave06@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">Phone:</span>
+                        <span id="phone">(+91) 967 303 6719</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="label">LinkedIn:</span>
+                        <span id="linkedin">linkedin.com/in/kiran-badave</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Summary Section -->
+        <section class="cv-section">
+            <h3 class="section-title">Professional Summary</h3>
+            <p class="summary" id="summary"></p>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="cv-section">
+            <h3 class="section-title">Professional Experience</h3>
+            <div id="experienceContainer"></div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="cv-section">
+            <h3 class="section-title">Key Skills</h3>
+            <div id="skillsContainer" class="skills-grid"></div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="cv-section">
+            <h3 class="section-title">Education</h3>
+            <div id="educationContainer"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="cv-footer">
+            <p>References available upon request</p>
+            <p class="print-date">Printed: <span id="printDate"></span></p>
+        </footer>
+    </div>
+
+    <!-- Print Button (hidden when printing) -->
+    <div class="print-controls no-print">
+        <button onclick="window.print()" class="print-btn">🖨️ Print CV</button>
+        <button onclick="window.location.href='index.html'" class="back-btn">← Back to Portfolio</button>
+    </div>
+
+    <script>
+        // Populate CV with data from data.js
+        document.addEventListener('DOMContentLoaded', function() {
+            // Personal Info
+            document.getElementById('name').textContent = portfolioData.personal.name;
+            document.getElementById('title').textContent = portfolioData.personal.title;
+            document.getElementById('location').textContent = portfolioData.personal.location;
+            document.getElementById('email').textContent = portfolioData.personal.email;
+            document.getElementById('phone').textContent = portfolioData.personal.phone.join(', ');
+            document.getElementById('linkedin').textContent = portfolioData.personal.linkedinDisplay;
+            document.getElementById('profilePhoto').src = portfolioData.personal.profileImage;
+
+            // Summary
+            document.getElementById('summary').textContent = portfolioData.summary;
+
+            // Experience
+            const experienceContainer = document.getElementById('experienceContainer');
+            portfolioData.experience.forEach(exp => {
+                const expDiv = document.createElement('div');
+                expDiv.className = 'experience-item';
+                
+                let techList = '';
+                for (const [category, tech] of Object.entries(exp.technologies)) {
+                    techList += `<div class="tech-item"><strong>${category}:</strong> ${tech}</div>`;
+                }
+
+                expDiv.innerHTML = `
+                    <div class="exp-header">
+                        <div>
+                            <h4 class="company">${exp.company}</h4>
+                            <p class="role">${exp.role}</p>
+                            <p class="exp-location">${exp.location}</p>
+                        </div>
+                        <div class="duration">${exp.duration} (${exp.durationYears})</div>
+                    </div>
+                    <ul class="responsibilities">
+                        ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                    </ul>
+                    <div class="technologies">
+                        <strong>Key Technologies:</strong>
+                        ${techList}
+                    </div>
+                `;
+                experienceContainer.appendChild(expDiv);
+            });
+
+            // Skills
+            const skillsContainer = document.getElementById('skillsContainer');
+            portfolioData.skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'skill-item';
+                skillDiv.innerHTML = `
+                    <div class="skill-icon">${skill.icon}</div>
+                    <h4>${skill.title}</h4>
+                    <p>${skill.description}</p>
+                `;
+                skillsContainer.appendChild(skillDiv);
+            });
+
+            // Education
+            const educationContainer = document.getElementById('educationContainer');
+            portfolioData.education.forEach(edu => {
+                const eduDiv = document.createElement('div');
+                eduDiv.className = 'education-item';
+                eduDiv.innerHTML = `
+                    <div class="edu-icon">${edu.icon}</div>
+                    <div class="edu-content">
+                        <h4>${edu.degree}</h4>
+                        <p class="field">${edu.field}</p>
+                        <p class="institution">${edu.institution}</p>
+                        <p class="duration">${edu.duration}</p>
+                    </div>
+                `;
+                educationContainer.appendChild(eduDiv);
+            });
+
+            // Print Date
+            document.getElementById('printDate').textContent = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        });
+    </script>
+</body>
+</html>

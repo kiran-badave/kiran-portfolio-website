@@ -12,6 +12,9 @@ A modern, animated portfolio website showcasing my professional experience, skil
 - **Interactive Elements**: Hover effects, magnetic buttons, and tilt animations
 - **Performance Optimized**: Fast loading and smooth animations
 - **Accessibility**: WCAG compliant with proper semantic HTML
+- **Printable CV**: Professional print-optimized CV version (cv-print.html)
+- **Centralized Data**: Single source of truth for all content (data.js)
+- **Profile Picture**: Animated profile photo with 3D effects
 - **Easter Egg**: Hidden Konami code surprise! 🎮
 
 ## 🚀 Live Demo
@@ -22,9 +25,12 @@ Visit the live website: [https://kiranbadave.github.io/kiran-portfolio-website](
 
 ```
 kiran-portfolio-website/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and animations
+├── index.html          # Main portfolio website
+├── cv-print.html       # Printable CV version
+├── styles.css          # Portfolio CSS styles and animations
+├── cv-print.css        # Print-optimized CV styles
 ├── script.js           # JavaScript and GSAP animations
+├── data.js             # Centralized data source (SINGLE SOURCE OF TRUTH)
 ├── README.md           # Project documentation
 ├── DEPLOYMENT.md       # Deployment guide
 ├── ASSETS_GUIDE.md     # Assets organization guide
@@ -148,15 +154,53 @@ jobs:
 
 ## 🎨 Customization
 
-### Update Personal Information
+### Update Personal Information (Centralized Data Management)
 
-Edit `index.html` to update:
-- Name and title
-- Contact information
-- Work experience
-- Skills
-- Education
-- Projects
+**IMPORTANT**: All content is managed in a single file: [`data.js`](data.js:1)
+
+To update your portfolio information:
+
+1. **Open `data.js`** - This is your single source of truth
+2. **Edit the relevant section**:
+   - `personal` - Name, title, contact info, profile picture
+   - `summary` - Professional summary
+   - `stats` - Years of experience, projects, technologies
+   - `experience` - Work history and responsibilities
+   - `skills` - Technical skills and expertise
+   - `education` - Academic background
+
+3. **Save the file** - Changes automatically reflect in:
+   - Main portfolio website (`index.html`)
+   - Printable CV (`cv-print.html`)
+
+**Example: Updating your email**
+```javascript
+personal: {
+    email: "newemail@example.com",  // Change here
+    // ... other fields
+}
+```
+
+**Example: Adding new work experience**
+```javascript
+experience: [
+    {
+        company: "New Company",
+        location: "City, Country",
+        role: "Your Role",
+        duration: "Start - End",
+        durationYears: "X years",
+        responsibilities: [
+            "Responsibility 1",
+            "Responsibility 2"
+        ],
+        technologies: {
+            "Category": "Tech stack"
+        }
+    },
+    // ... existing experiences
+]
+```
 
 ### Modify Colors
 
@@ -238,7 +282,30 @@ This project is open source and available under the [MIT License](LICENSE).
 - **Animation Library**: GSAP 3.12.5
 - **Development Time**: Optimized for quick deployment
 
-## 🔮 Future Enhancements
+## 📄 Printable CV Version
+
+A professional, print-optimized CV is available at [`cv-print.html`](cv-print.html:1)
+
+**Features:**
+- ✅ Print-optimized layout (A4 size)
+- ✅ Professional formatting for paper/PDF
+- ✅ Automatic date stamping
+- ✅ Black & white printer friendly
+- ✅ Uses same data source as main portfolio
+- ✅ One-click print button
+- ✅ Responsive for screen viewing
+
+**How to Use:**
+1. **View Online**: Open `cv-print.html` in your browser
+2. **Print**: Click the "🖨️ Print CV" button or use Ctrl/Cmd + P
+3. **Save as PDF**: Use your browser's "Save as PDF" option when printing
+4. **Share**: The printed/PDF version is perfect for job applications
+
+**Accessing from Portfolio:**
+- Click the "📄 Download CV" button in the hero section
+- Or directly navigate to: `https://yourdomain.com/cv-print.html`
+
+## � Future Enhancements
 
 - [ ] Add blog section
 - [ ] Integrate with CMS for easy content updates
@@ -246,7 +313,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - [ ] Implement dark/light theme toggle
 - [ ] Add contact form with backend integration
 - [ ] Include testimonials section
-- [ ] Add downloadable resume PDF
+- [x] ~~Add downloadable resume PDF~~ (Printable CV available!)
 
 ## 💡 Tips for Interviewers
 
