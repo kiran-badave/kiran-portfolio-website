@@ -1,6 +1,13 @@
 /* ===================================
    CSS Variables & Reset
    =================================== */
+/**
+ * Portfolio Website Styles
+ * Copyright (c) 2025 Kiran Badave
+ * Licensed under the MIT License
+ * https://github.com/kiran-badave/kiran-badave.github.io
+ */
+
 :root {
     --primary-color: #6366f1;
     --secondary-color: #8b5cf6;

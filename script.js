@@ -1,3 +1,10 @@
+/**
+ * Portfolio Website JavaScript
+ * Copyright (c) 2025 Kiran Badave
+ * Licensed under the MIT License
+ * https://github.com/kiran-badave/kiran-badave.github.io
+ */
+
 // ===================================
 // GSAP Initialization
 // ===================================
