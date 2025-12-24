@@ -643,7 +643,53 @@ section {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.products-worked {
     margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(99, 102, 241, 0.05);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.products-worked h4 {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.product-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.product-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.product-list li::before {
+    content: '🔗';
+    position: absolute;
+    left: 0;
+    font-size: 0.9rem;
+}
+
+.product-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.product-list a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 .responsibilities {

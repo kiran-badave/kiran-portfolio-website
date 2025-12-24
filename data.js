@@ -35,6 +35,16 @@ const portfolioData = {
             duration: "May 2022 - Present",
             durationYears: "3+ years",
             logo: "assets/images/ibm-logo.png",
+            products: [
+                {
+                    name: "Concert for IBM Z Operations Management",
+                    url: "https://www.ibm.com/products/concert-for-z/operations-management"
+                },
+                {
+                    name: "IBM z/OS Connect",
+                    url: "https://www.ibm.com/products/zos-connect"
+                }
+            ],
             responsibilities: [
                 "Developed a React-based <strong>Monorepo</strong> from scratch, implementing service proxying, <strong>Keycloak authentication & authorization</strong>, and a custom framework for cross-project use",
                 "Developed and customized various dashboards using ECharts, Carbon Charts, and D3 Charts",
@@ -70,6 +80,12 @@ const portfolioData = {
             duration: "Dec 2017 - May 2022",
             durationYears: "4 years 6 months",
             logo: "assets/images/juno-logo.png",
+            products: [
+                {
+                    name: "Juno Campus",
+                    url: "https://juno.org.in/"
+                }
+            ],
             responsibilities: [
                 "Engineered and deployed front-end UIs and back-end middleware for Admission, Academic, Exam, and Finance modules, optimizing code, code securing to boost data processing speed by 40% and user engagement by 25%",
                 "Developed and designed secure <strong>RESTful APIs</strong> using <strong>Java, Spring Boot</strong> for seamless functionality integration",

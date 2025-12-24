@@ -113,6 +113,20 @@
                     techList += `<div class="tech-item"><strong>${category}:</strong> ${tech}</div>`;
                 }
 
+                let productsHTML = '';
+                if (exp.products && exp.products.length > 0) {
+                    productsHTML = `
+                        <div class="products-section">
+                            <strong>Products Worked On:</strong>
+                            <ul class="product-list">
+                                ${exp.products.map(product =>
+                                    `<li><a href="${product.url}" target="_blank">${product.name}</a></li>`
+                                ).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+
                 expDiv.innerHTML = `
                     <div class="exp-header">
                         <div>
@@ -122,6 +136,7 @@
                         </div>
                         <div class="duration">${exp.duration} (${exp.durationYears})</div>
                     </div>
+                    ${productsHTML}
                     <ul class="responsibilities">
                         ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
                     </ul>
